@@ -83,7 +83,7 @@ const productLaptop = document.getElementById('product-laptop');
 const productDienThoai = document.getElementById('product-dienthoai');
 
 if (productHot) {
-    fetch('https://my-json-server.typicode.com/Duy-web29/backend/products')
+    fetch('https://my-json-server.typicode.com/Duy-web29/backend1/products')
         .then(response => response.json())
         .then(data => {
             console.log(data);
@@ -109,7 +109,7 @@ const sortPrice = document.getElementById('sort-price');
 let allProductsData = [];
 
 if (productAll) {
-    fetch('https://my-json-server.typicode.com/Duy-web29/backend/products')
+    fetch('https://my-json-server.typicode.com/Duy-web29/backend1/products')
         .then(response => response.json())
         .then(data => {
             console.log(data);
@@ -176,7 +176,7 @@ document.addEventListener('click', function (e) {
 // if (productDetail) {
 //     const urlParams = new URLSearchParams(window.location.search); 
 //     const productName = urlParams.get('name');
-//     fetch('https://my-json-server.typicode.com/Duy-web29/backend/products')
+//     fetch('https://my-json-server.typicode.com/Duy-web29/backend1/products')
 //         .then(response => response.json())
 //         .then(data => {
 //             const productData = data.find(p => p.name === productName);
@@ -212,7 +212,7 @@ const productDetail = document.getElementById('product-detail');
 if (productDetail) {
     const urlParams = new URLSearchParams(window.location.search);
     const productName = urlParams.get('name');
-    fetch('https://my-json-server.typicode.com/Duy-web29/backend/products')
+    fetch('https://my-json-server.typicode.com/Duy-web29/backend1/products')
         .then(response => response.json())
         .then(data => {
             const productData = data.find(p => p.name === productName);
@@ -440,7 +440,7 @@ document.addEventListener('click', function (e) {
         console.log('Click add to cart, product ID:', productId); // Debug
 
         if (productId) {
-            fetch(`https://my-json-server.typicode.com/Duy-web29/backend/products/${productId}`)
+            fetch(`https://my-json-server.typicode.com/Duy-web29/backend1/products/${productId}`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
@@ -568,7 +568,7 @@ function initLoginSystem() {
 
 // Đăng nhập người dùng
 function loginUser(email, password) {
-    fetch('https://my-json-server.typicode.com/Duy-web29/backend/users')
+    fetch('https://my-json-server.typicode.com/Duy-web29/backend1/users')
         .then(response => response.json())
         .then(users => {
             const user = users.find(u => u.email === email && u.password === password);
@@ -597,7 +597,7 @@ function loginUser(email, password) {
 
 // Đăng ký người dùng mới
 function registerUser(name, email, password) {
-    fetch('https://my-json-server.typicode.com/Duy-web29/backend/users')
+    fetch('https://my-json-server.typicode.com/Duy-web29/backend1/users')
         .then(response => response.json())
         .then(users => {
             // Kiểm tra xem email đã tồn tại chưa
@@ -618,7 +618,7 @@ function registerUser(name, email, password) {
             };
 
             // Gửi yêu cầu POST để thêm người dùng mới
-            fetch('https://my-json-server.typicode.com/Duy-web29/backend/users', {
+            fetch('https://my-json-server.typicode.com/Duy-web29/backend1/users', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -1089,7 +1089,7 @@ class Cart {
     // Xử lý thêm vào giỏ hàng từ danh sách sản phẩm
     async handleAddToCart(productId) {
         try {
-            const response = await fetch(`https://my-json-server.typicode.com/Duy-web29/backend/products/${productId}`);
+            const response = await fetch(`https://my-json-server.typicode.com/Duy-web29/backend1/products/${productId}`);
             if (!response.ok) throw new Error('Không tìm thấy sản phẩm');
             
             const productData = await response.json();
@@ -1113,7 +1113,7 @@ class Cart {
     // Xử lý thêm vào giỏ hàng từ trang chi tiết
     async handleAddToCartFromDetail(productName) {
         try {
-            const response = await fetch('https://my-json-server.typicode.com/Duy-web29/backend/products');
+            const response = await fetch('https://my-json-server.typicode.com/Duy-web29/backend1/products');
             const products = await response.json();
             const productData = products.find(p => p.name === productName);
             
@@ -1276,7 +1276,7 @@ class ProductManager {
 
     // Tải danh sách sản phẩm
     loadProducts() {
-        fetch('https://my-json-server.typicode.com/Duy-web29/backend/products')
+        fetch('https://my-json-server.typicode.com/Duy-web29/backend1/products')
             .then(response => response.json())
             .then(data => {
                 this.products = data;
@@ -1520,7 +1520,7 @@ class ProductManager {
     // Xóa sản phẩm
     deleteProduct(productId) {
         if (confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')) {
-            fetch(`https://my-json-server.typicode.com/Duy-web29/backend/products/${productId}`, {
+            fetch(`https://my-json-server.typicode.com/Duy-web29/backend1/products/${productId}`, {
                 method: 'DELETE'
             })
             .then(response => {
@@ -1648,7 +1648,7 @@ class ProductManager {
             id: newId.toString()
         };
 
-        fetch('https://my-json-server.typicode.com/Duy-web29/backend/products', {
+        fetch('https://my-json-server.typicode.com/Duy-web29/backend1/products', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -1674,7 +1674,7 @@ class ProductManager {
             id: this.currentEditingProduct.id
         };
 
-        fetch(`https://my-json-server.typicode.com/Duy-web29/backend/products/${this.currentEditingProduct.id}`, {
+        fetch(`https://my-json-server.typicode.com/Duy-web29/backend1/products/${this.currentEditingProduct.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
