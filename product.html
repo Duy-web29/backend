@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="banner">
+        <div class="banner-slides">
+            <div class="banner-slide">
+                <img src="img/banner1.jpg" alt="Khuyến mãi laptop mới">
+                <div class="banner-caption">Khuyến mãi đặc biệt: Giảm 20% laptop</div>
+            </div>
+            <div class="banner-slide">
+                <img src="img/banner2.jpg" alt="Sản phẩm điện thoại hot">
+                <div class="banner-caption">Điện thoại mới nhất 2025</div>
+            </div>
+            <div class="banner-slide">
+                <img src="img/banner3.jpg" alt="Ưu đãi bán hàng">
+                <div class="banner-caption">Ưu đãi mua sắm cuối năm</div>
+            </div>
+        </div>
+        <div class="nav-arrow prev" onclick="changeSlide(-1)">←</div>
+        <div class="nav-arrow next" onclick="changeSlide(1)">→</div>
+        <div class="dots"></div>
+    </div>
+    <!-- Lấy tất cả sản phẩm ra trong trnag này -->
+    <div class="content">
+        <h2>Tất cả sản phẩm</h2>
+        <div class="filter-container">
+            <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm..." class="search-bar">
+            <!-- <button class="search-button">Tìm kiếm</button> -->
+            <select name="" id="sort-price" class="sort-select">
+                <option value="">Sắp xếp theo giá</option>
+                <option value="asc">Giá thấp đến cao</option>
+                <option value="desc">Giá cao đến thấp</option>
+            </select>
+        </div>
+        <div id="all-products" class="product-list"></div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

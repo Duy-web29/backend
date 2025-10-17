@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Sản Phẩm - LuminusX</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="admin-section" class="admin-section">
+        <div class="admin-container">
+            <div class="admin-header">
+                <h1 class="admin-title">Quản Lý Sản Phẩm</h1>
+                <div class="admin-actions">
+                    <button id="add-product-btn" class="btn-admin btn-admin-primary">
+                        <i class="fas fa-plus"></i>
+                        Thêm Sản Phẩm
+                    </button>
+                    <a href="index.html" class="btn-admin btn-admin-secondary">
+                        <i class="fas fa-home"></i>
+                        Về Trang Chủ
+                    </a>
+                </div>
+            </div>
+
+            <div class="products-table-container">
+                <table class="products-table">
+                    <thead>
+                        <tr>
+                            <th>Hình ảnh</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Danh mục</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-product-table">
+                        <!-- Sản phẩm sẽ được render bằng JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Thêm/Sửa Sản Phẩm -->
+    <!-- Modal Thêm/Sửa Sản Phẩm -->
+<div id="product-modal" class="product-modal hidden">
+    <div class="product-modal-content">
+        <div class="product-modal-header">
+            <h2 id="product-modal-title" class="product-modal-title">Thêm Sản Phẩm Mới</h2>
+            <button id="product-modal-close" class="product-modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <form id="product-form">
+            <div class="form-group">
+                <label for="product-name" class="form-label">Tên sản phẩm</label>
+                <input type="text" id="product-name" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="product-price" class="form-label">Giá (VND)</label>
+                <input type="number" id="product-price" class="form-input" min="0" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Hình ảnh sản phẩm</label>
+                <div class="upload-container" id="image-upload-container">
+                    <input type="file" id="product-image-upload" class="image-upload-input" accept="image/*">
+                    
+                    <div class="upload-content">
+                        <img id="preview-image" class="preview-image" alt="Preview">
+                        
+                        <div id="upload-text" class="upload-text">
+                            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                            <div>
+                                <strong>Click để upload</strong> hoặc kéo thả file vào đây
+                            </div>
+                            <div class="upload-hint">Hỗ trợ: JPG, PNG, GIF (tối đa 5MB)</div>
+                        </div>
+                        
+                        <div id="file-name" class="file-name"></div>
+                    </div>
+                    
+                    <button type="button" class="remove-image-btn" id="remove-image-btn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="product-category" class="form-label">Danh mục</label>
+                <select id="product-category" class="form-select" required>
+                    <option value="">Chọn danh mục</option>
+                    <option value="điện thoại">Điện thoại</option>
+                    <option value="laptop">Laptop</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="product-description" class="form-label">Mô tả</label>
+                <textarea id="product-description" class="form-textarea" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-checkbox">
+                    <input type="checkbox" id="product-hot">
+                    <label for="product-hot">Sản phẩm nổi bật</label>
+                </div>
+            </div>
+            
+            <div class="form-actions">
+                <button type="button" class="btn-admin btn-admin-secondary" id="cancel-product-btn">
+                    Hủy
+                </button>
+                <button type="button" class="btn-admin btn-admin-primary" id="save-product-btn">
+                    <i class="fas fa-save"></i>
+                    Lưu Sản Phẩm
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <!-- Thông báo -->
+    <div id="notification" class="notification hidden"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>

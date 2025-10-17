@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstract - Designing for the Future</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Thay thế CDN cũ bằng cái mới này -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- CDN cho icon -->
+</head>
+
+<body>
+    
+
+    
+    <div class="banner">
+        <div class="banner-slides">
+            <div class="banner-slide">
+                <img src="img/banner1.jpg" alt="Khuyến mãi laptop mới">
+                <div class="banner-caption">Khuyến mãi đặc biệt: Giảm 20% laptop</div>
+            </div>
+            <div class="banner-slide">
+                <img src="img/banner2.jpg" alt="Sản phẩm điện thoại hot">
+                <div class="banner-caption">Điện thoại mới nhất 2025</div>
+            </div>
+            <div class="banner-slide">
+                <img src="img/banner3.jpg" alt="Ưu đãi bán hàng">
+                <div class="banner-caption">Ưu đãi mua sắm cuối năm</div>
+            </div>
+        </div>
+        <div class="nav-arrow prev" onclick="changeSlide(-1)">←</div>
+        <div class="nav-arrow next" onclick="changeSlide(1)">→</div>
+        <div class="dots"></div>
+    </div>
+
+
+    <div class="content">
+        <h2>Sản phẩm nổi bật</h2>
+        <div id="product-hot" class="product-list"></div>
+        <h2>Sản phẩm laptop</h2>
+        <div id="product-laptop" class="product-list"></div>
+        <h2>Sản phẩm điện thoại</h2>
+        <div id="product-dienthoai" class="product-list"></div>
+    </div>
+
+<!-- Popup đăng nhập -->
+<div id="login-popup" class="login-popup hidden">
+    <div class="login-container" id="login-container">
+        <button class="login-close-btn" id="login-close-btn">&times;</button>
+        
+        <!-- Form đăng ký -->
+        <div class="login-form-container login-sign-up-container">
+            <form class="login-form" id="signup-form">
+                <h1>Tạo tài khoản</h1>
+                <div class="login-social-container">
+                    <a href="#" class="social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social" aria-label="Google"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>hoặc sử dụng email để đăng ký</span>
+                <input type="text" placeholder="Họ tên" id="signup-name" required />
+                <input type="email" placeholder="Email" id="signup-email" required />
+                <input type="password" placeholder="Mật khẩu" id="signup-password" required />
+                <button type="submit">Đăng ký</button>
+            </form>
+        </div>
+        
+        <!-- Form đăng nhập -->
+        <div class="login-form-container login-sign-in-container">
+            <form class="login-form" id="signin-form">
+                <h1>Đăng nhập</h1>
+                <div class="login-social-container">
+                    <a href="#" class="social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social" aria-label="Google"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>hoặc sử dụng tài khoản của bạn</span>
+                <input type="email" placeholder="Email" id="signin-email" required />
+                <input type="password" placeholder="Mật khẩu" id="signin-password" required />
+                <a href="#">Quên mật khẩu?</a>
+                <button type="submit">Đăng nhập</button>
+            </form>
+        </div>
+        
+        <!-- Overlay -->
+        <div class="login-overlay-container">
+            <div class="login-overlay">
+                <div class="login-overlay-panel login-overlay-left">
+                    <h1>Chào mừng trở lại!</h1>
+                    <p>Để kết nối với chúng tôi, vui lòng đăng nhập bằng thông tin cá nhân của bạn</p>
+                    <button class="ghost" id="login-sign-in">Đăng nhập</button>
+                </div>
+                <div class="login-overlay-panel login-overlay-right">
+                    <h1>Xin chào!</h1>
+                    <p>Nhập thông tin cá nhân của bạn và bắt đầu hành trình với chúng tôi</p>
+                    <button class="ghost" id="login-sign-up">Đăng ký</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Thông báo -->
+    <div id="notification" class="notification hidden"></div>
+    <div> 
+        
+    </div>
+
+   
+
+    <script src="main.js"></script>
+</body>
+
+</html>

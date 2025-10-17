@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm - LuminusX</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+ 
+
+    <!-- Chi tiết sản phẩm -->
+    <div class="detail-container">
+        <div id="product-detail" class="product-detail">
+            <!-- Nội dung sẽ được render bằng JavaScript -->
+        </div>
+    </div>
+
+    <!-- Modal xem ảnh -->
+    <div class="image-modal" id="image-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <img id="modal-image" src="" alt="">
+            <button class="modal-nav modal-prev" id="modal-prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="modal-nav modal-next" id="modal-next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Thông báo -->
+    <div id="notification" class="notification hidden"></div>
+
+    <!-- Popup đăng nhập -->
+    <div id="login-popup" class="login-popup hidden">
+        <!-- Nội dung popup đăng nhập -->
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
